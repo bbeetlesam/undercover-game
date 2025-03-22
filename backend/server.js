@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "*", // Change if needs specific URL
+        origin: "*", // Change if it needs specific URL
         methods: ["GET", "POST"]
     }
 });
