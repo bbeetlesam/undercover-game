@@ -3,6 +3,9 @@
 
 :root {
     --header-padding: 20px;
+    --dropdown-spacing: 5px;
+    --dropdown-fade-duration: 0.25s;
+    --arrow-offset: -4px; /* smaller offset for closer arrow */
 }
 
 .header {
@@ -18,7 +21,7 @@
     justify-content: space-between;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    font-family: 'Clear Sans', system-ui, sans-serif;
+    font-family: 'DM Mono', 'Clear Sans', system-ui, sans-serif;
 }
 
 /* Left Section */
@@ -29,7 +32,7 @@
     padding-left: var(--header-padding);
 }
 
-/* Center tetap ada untuk struktur */
+/* Center Placeholder */
 .header-center {
     flex: 1;
     visibility: hidden;
@@ -43,43 +46,125 @@
     padding-right: var(--header-padding);
 }
 
-/* Game Logo Button */
-.game-logo-btn {
+/* Logo & Settings Container */
+.logo-container, .settings-container {
+    position: relative;
     display: flex;
     align-items: center;
-    padding: 0;
-    background: none;
-    border: none;
     cursor: pointer;
 }
 
-.game-logo {
-    width: 25px;
-    height: 25px;
+/* Keep logo aligned properly */
+.game-logo, .settings-icon {
+    width: 30px;
+    height: 30px;
 }
 
-/* Title tetap bold */
+/* Ensure the title remains aligned */
 .game-title {
     font-family: 'DM Mono', serif;
     font-size: 1.7rem;
-    max-height: 60px;
     line-height: 60px;
-    /*padding-bottom: 8px;*/
 }
 
-/* Settings Button */
-.settings-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
+/* Dropdown */
+.dropdown {
+    position: absolute;
+    top: 90%; /* set dropdown vertical spacing*/
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(-10px);
+    padding: 8px 0;
+    list-style: none;
+    min-width: 150px;
+    visibility: hidden;
+    transition: opacity var(--dropdown-fade-duration) ease, transform var(--dropdown-fade-duration) ease;
+}
+
+/* Align dropdown left */
+.dropdown[data-dropdown-align="left"] {
+    left: 0;
+    transform: translateY(-10px);
+    margin-left: -10px;
+}
+
+/* Align dropdown center */
+.dropdown[data-dropdown-align="center"] {
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+}
+
+/* Align dropdown right */
+.dropdown[data-dropdown-align="right"] {
+    right: 0;
+    transform: translateY(-10px);
+    margin-right: -10px;
+}
+
+/* Dropdown Arrow */
+.dropdown-arrow {
+    position: absolute;
+    top: var(--arrow-offset);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+}
+
+/* Arrow for left dropdown */
+.dropdown[data-dropdown-align="left"] .dropdown-arrow {
+    left: 15px;
+    transform: translateY(-50%);
+}
+
+/* Arrow for center dropdown */
+.dropdown[data-dropdown-align="center"] .dropdown-arrow {
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* Arrow for right dropdown */
+.dropdown[data-dropdown-align="right"] .dropdown-arrow {
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+/* Dropdown Items */
+.dropdown li {
+    padding: var(--dropdown-spacing) 15px;
     cursor: pointer;
-    padding: 0;
+    transition: background 0.2s ease-in-out;
+    font-size: 14px;
+    text-align: center;
 }
 
-.settings-button img {
-    width: 32px;
-    height: 32px;
-    transition: transform 0.2s ease-in-out;
+/* Hover Effect */
+.dropdown li:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Show Dropdown */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Fade-in animation on hover */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.visible {
+    animation: fadeIn var(--dropdown-fade-duration) forwards;
 }
