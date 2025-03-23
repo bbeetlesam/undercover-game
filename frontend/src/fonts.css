@@ -15,3 +15,12 @@
     font-style: normal;
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'DM Mono';
+    src: url('../public/fonts/DMMono-Medium.woff2') format('woff2'),
+    url('../public/fonts/DMMono-Medium.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
