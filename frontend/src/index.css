@@ -1,18 +1,20 @@
+/* Global CSS */
 @import url('./fonts.css');
 
 :root {
-    font-family: 'Clear Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'DM Mono', 'Clear Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
     color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
-
+    color: rgba(0, 0, 0, 0.87);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    caret-color: transparent;
+    background: #f8f7f3 url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'><path d='M0 0H50V50H0z' fill='none' stroke='%23d6d6d6' stroke-width='2' stroke-linecap='square'/></svg>") repeat fixed;
 }
 
 a {
