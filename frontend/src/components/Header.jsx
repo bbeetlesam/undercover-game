@@ -57,7 +57,7 @@ function Header() {
                             <li onClick={() => console.log("Credits")}>Credits</li>
                         </ul>
                     </div>
-                    <h1 className="game-title">undercover</h1>
+                    <p className="game-title">undercover</p>
                 </div>
                 
                 {/* Center Section */}
