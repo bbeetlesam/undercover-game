@@ -32,8 +32,9 @@
 }
 
 .read {
-    font-family: SFMono, monospace;
-    color: #888;
+    font-family: 'SFMono', monospace;
+    font-size: 0.9em;
+    color: #1a1a1a;
 }
 
 .username-container {
@@ -64,7 +65,6 @@
     color: #aaa;
     transition: opacity 0.08s ease-in-out;
 }
-
 .username-input:focus::placeholder {
     opacity: 0;
 }
