@@ -1,5 +1,6 @@
 //
 import { useState } from "react";
+import "./HomeView.css";
 
 function HomeView() {
     const [username, setUsername] = useState("");
