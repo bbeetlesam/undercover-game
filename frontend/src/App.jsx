@@ -2,11 +2,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css'
 
-import Header from './components/Header'
-import HomeView from './components/HomeView'
+import Header from './components/layout/Header.jsx'
+import HomeView from './components/page/HomeView.jsx'
 import NotFoundPage from './components/page/NotFoundPage'
-import CreateRoomView from './components/CreateRoomView'
-import JoinRoomView from './components/JoinRoomView'
+import CreateRoomView from './components/page/CreateRoomView.jsx'
+import JoinRoomView from './components/page/JoinRoomView.jsx'
 
 function App() {
     return (

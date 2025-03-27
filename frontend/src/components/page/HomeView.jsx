@@ -1,7 +1,7 @@
 //
 import "./HomeView.css";
 import { useNavigate } from "react-router-dom";
-import InputBox from "./ui/InputBox";
+import InputBox from "../ui/InputBox.jsx";
 
 function HomeView() {
     const navigate = useNavigate();
