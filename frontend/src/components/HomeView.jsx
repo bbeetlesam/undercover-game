@@ -1,10 +1,13 @@
 //
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./HomeView.css";
 
 function HomeView() {
     const [username, setUsername] = useState("");
     const [warningMessage, setWarningMessage] = useState("");
+    
+    const navigate = useNavigate();
     
     const handleInputChange = (text) => {
         let value = text.target.value.replace(/\s/g, ''); // Restrict whitespace
@@ -45,11 +48,11 @@ function HomeView() {
                     {warningMessage && <p className="warning-input">{warningMessage}</p>}
                 </div>
                 <div className="button-card">
-                    <button className="card-button">
-                        <p>Create Room</p>
+                    <button className="card-button" onClick={() => navigate("/create-room")}>
+                        Create Room
                     </button>
-                    <button className="card-button">
-                        <p>Join Room</p>
+                    <button className="card-button" onClick={() => navigate("/join-room")}>
+                        Join Room
                     </button>
                 </div>
                 <p className="read">
