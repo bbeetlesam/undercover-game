@@ -4,6 +4,7 @@ import './App.css'
 
 import Header from './components/Header'
 import HomeView from './components/HomeView'
+import NotFoundPage from './components/page/NotFoundPage'
 import CreateRoomView from './components/CreateRoomView'
 import JoinRoomView from './components/JoinRoomView'
 
@@ -13,6 +14,7 @@ function App() {
             <Header />
             <Router>
                 <Routes>
+                    <Route path="*" element={<NotFoundPage />} />
                     <Route path="/" element={<HomeView />} />
                     <Route path="/create-room" element={<CreateRoomView />} />
                     <Route path="/join-room" element={<JoinRoomView />} />
