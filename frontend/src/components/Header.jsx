@@ -5,7 +5,7 @@ import gameLogo from '../assets/react.svg';
 import settingsIcon from '../assets/settings_36dp_000000_FILL1_wght200_GRAD0_opsz40.svg';
 
 import './Header.css';
-import HowToPlay from './HowToPlay';
+import HowToPlay from './popup/HowToPlay.jsx';
 
 function Header() {
     const [showGameDropdown, setShowGameDropdown] = useState(false);
